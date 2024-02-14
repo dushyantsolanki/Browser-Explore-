@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Nagigator Object</title>
+</head>
+
+
+<body>
+    <h1> </h1>
+</body>
+<script>
+    let dateData = ''
+    navigator.geolocation.watchPosition((data) => {
+        let dateData = new Date(data.timestamp)
+        document.getElementsByTagName('h1')[0].innerHTML = `Latitude : ${data.coords.latitude} AND Longitude : ${data.coords.longitude} `
+
+
+        console.log(`Latitude : ${data.coords.latitude} AND Longitude : ${data.coords.longitude} `, dateData.getHours(), dateData.getMinutes(), dateData.getSeconds(),);
+    })
+
+</script>
+
+</html>
